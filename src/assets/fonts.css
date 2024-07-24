@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Inter Display';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/static/fonts/InterDisplay/InterDisplay-Light.woff2') format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'Inter Display';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/static/fonts/InterDisplay/InterDisplay-Regular.woff2') format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'Inter Display';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/static/fonts/InterDisplay/InterDisplay-Medium.woff2') format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'Inter Display';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/static/fonts/InterDisplay/InterDisplay-SemiBold.woff2') format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'Inter Display';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/static/fonts/InterDisplay/InterDisplay-Bold.woff2') format('woff2');
+  }
+  
+  @font-face {
+    font-family: Onest;
+    font-style: normal;
+    font-weight: 800;
+    src: url('/static/fonts/Onest/OnestExtraBold.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: Onest;
+    font-style: normal;
+    font-weight: 700;
+    src: url('/static/fonts/Onest/OnestBold.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: Onest;
+    font-style: normal;
+    font-weight: 600;
+    src: url('/static/fonts/Onest/OnestSemiBold.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: Onest;
+    font-style: normal;
+    font-weight: 500;
+    src: url('/static/fonts/Onest/OnestMedium.woff') format('woff');
+  }
+  
+  html,
+  body {
+    font-family: 'Inter Display', sans-serif;
+  }
+  
