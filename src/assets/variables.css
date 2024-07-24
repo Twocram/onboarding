@@ -1,0 +1,155 @@
+.light-scheme {
+  background-color: #fff;
+
+  --const-black: #222;
+
+  /* Colors */
+  --color-red: #fe015c;
+  --color-blue: #027dff;
+  --color-orange: #fd7310;
+  --color-green: #03ea44;
+  --color-black: #222;
+  --color-wight: #fff;
+
+  /* Background colors */
+  --bg-red: #ffe5ee;
+  --bg-blue: #e0efff;
+  --bg-orange: #ffe0c9;
+  --bg-yellow: #fea801;
+  --bg-purple: #ad01fe;
+
+  /* Gray colors */
+  --gray-main: #f5f6f8;
+  --gray-1: #f1f1f1;
+  --gray-2: #e6e6e6;
+  --gray-3: #9d9d9d;
+  --gray-4: #5b5b5b;
+  --gray-5: rgba(120 120 128 16%);
+
+  /* Gradients */
+  --purple-gradient: linear-gradient(91.31deg, #5201fe 1.92%, #9c63fc 94.97%);
+  --pink-gradient: linear-gradient(125.22deg, #d25aff 23.85%, #d48bff 48.65%, #e12aff 86.65%);
+  --orange-gradient: linear-gradient(110deg, #fd7310 7.32%, #ffa361 58.33%, #fd7310 92.05%);
+
+  /* Dark Theme */
+  --bg-primary: #fff;
+  --bg-secondary: #fff;
+  --bottom-border: #9d9d9da6;
+  --bg-progress: var(--gray-2);
+  --bg-hit-raffle: #f5f6f8;
+  --overlay-sroll-top: linear-gradient(180deg, #fff 10%, rgb(255 255 255 / 50%));
+  --overlay-sroll-bottom: linear-gradient(0deg, #fff 10%, rgb(255 255 255 / 50%));
+  --g1-to-black: var(--gray-1);
+  --g1-to-gb: var(--gray-1);
+  --g1-to-label-sec: var(--gray-1);
+  --g1-to-g4: var(--gray-1);
+  --g2-to-g4: var(--gray-2);
+  --black-to-wight: var(--color-black);
+  --wight-to-main-gray: var(--color-wight);
+  --g2-to-fill-sec: var(--gray-2);
+  --g3-to-g4: var(--gray-3);
+  --g3-to-8d: var(--gray-3);
+  --main-gray-to-black: var(--gray-main);
+  --main-gray-to-gb: var(--gray-main);
+  --main-gray-to-36: var(--gray-main);
+  --main-gray-to-label-sec: var(--gray-main);
+  --blue-to-wight: var(--color-blue);
+  --blue-to-g3: var(--color-blue);
+  --btn-bg: #e0efff;
+  --w-to-g4: var(--color-wight);
+  --g1-to-wight: #3b3b3b;
+  --line: var(--gray-2);
+  --g-main-to-g-dark: #f5f6f8;
+}
+
+.dark-scheme {
+  background-color: #000;
+
+  --const-black: #222;
+
+  /* Colors */
+  --color-red: #fe015c;
+  --color-blue: #027dff;
+  --color-orange: #fd7310;
+  --color-green: #03ea44;
+  --color-black: #fff;
+  --color-wight: #fff;
+
+  /* Background colors */
+  --bg-red: #ffe5ee;
+  --bg-blue: #e0efff;
+  --bg-orange: #ffe0c9;
+  --bg-yellow: #fea801;
+  --bg-purple: #ad01fe;
+
+  /* Gray colors */
+  --gray-main: #f5f6f8;
+  --gray-1: #f1f1f1;
+  --gray-2: #e6e6e6;
+  --gray-3: #9d9d9d;
+  --gray-4: #5b5b5b;
+  --gray-5: rgba(120 120 128 16%);
+
+  /* Gradients */
+  --purple-gradient: linear-gradient(91.31deg, #5201fe 1.92%, #9c63fc 94.97%);
+  --pink-gradient: linear-gradient(125.22deg, #d25aff 23.85%, #d48bff 48.65%, #e12aff 86.65%);
+  --orange-gradient: linear-gradient(110deg, #fd7310 7.32%, #ffa361 58.33%, #fd7310 92.05%);
+
+  /* Dark Theme */
+  --bg-primary: #000;
+  --bg-secondary: var(--const-black);
+  --bottom-border: #444;
+  --bg-progress: #6a6a6a;
+  --bg-hit-raffle: #3b3b3b;
+  --overlay-sroll-top: linear-gradient(180deg, #000 10%, rgb(0 0 0 / 50%));
+  --overlay-sroll-bottom: linear-gradient(0deg, #000 10%, rgb(0 0 0 / 50%));
+  --g1-to-g4: var(--gray-4);
+  --g1-to-black: var(--const-black);
+  --g1-to-gb: #3b3b3b;
+  --g1-to-label-sec: #3c3c4399;
+  --black-to-wight: var(--color-wight);
+  --wight-to-main-gray: var(--const-black);
+  --g2-to-g4: var(--gray-4);
+  --g2-to-fill-sec: #78788029;
+  --g3-to-g4: var(--gray-4);
+  --g3-to-8d: #8d8d8d;
+  --main-gray-to-black: var(--const-black);
+  --main-gray-to-gb: #3b3b3b;
+  --main-gray-to-36: #363636;
+  --main-gray-to-label-sec: #3c3c4399;
+  --blue-to-wight: var(--color-wight);
+  --blue-to-g3: var(--gray-3);
+  --btn-bg: #3b3b3b;
+  --w-to-g4: var(--gray-4);
+  --g1-to-wight: #fff;
+  --line: #222;
+  --g-main-to-g-dark: #3b3b3b;
+}
+
+:root {
+  --h1: 800 3.33vw/1.2 'Onest';
+  --h2: 700 2.78vw/1.2 'Onest';
+  --h3: 700 1.53vw/1.2 'Onest';
+  --btn: 600 1.25vw/1.2 'Inter Display';
+  --body: 500 1.39vw/1.4 'Inter Display';
+  --body-2: 500 1.25vw/1.3 'Inter Display';
+  --body-3: 500 1.11vw/1.4 'Inter Display';
+  --caption-1: 500 1.11vw/1.4 'Inter Display';
+  --caption-2: 600 0.97vw/1.3 'Inter Display';
+  --caption-3: 500 0.97vw/1.4 'Inter Display';
+  --price-big: 600 1.67vw/1 'Inter Display';
+
+  @media (width <= 744px) {
+    --h1: 800 10.67vw/1.2 'Onest';
+    --h2: 700 8.53vw/1.2 'Onest';
+    --h3: 700 5.87vw/1.2 'Onest';
+    --btn: 600 4.8vw/1.2 'Inter Display';
+    --body: 500 1.39vw/1.4 'Inter Display';
+    --body-2: 500 4.8vw/1.3 'Inter Display';
+    --body-3: 500 4.27vw/1.4 'Inter Display';
+    --caption-1: 500 4.27vw/1.4 'Inter Display';
+    --caption-2: 600 3.73vw/1.3 'Inter Display';
+    --caption-3: 500 0.97vw/1.4 'Inter Display';
+    --price-big: 600 6.4vw/7.74vw 'Inter Display';
+  }
+}
