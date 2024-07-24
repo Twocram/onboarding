@@ -8,26 +8,26 @@ import onB32 from './assets/onB-32.png'
 import stars from './assets/star.gif'
 import VButton from './components/VButton.vue'
 
-const emits = defineEmits(['closeBoard'])
+const emits = defineEmits(['closeBoard']);
 
-const activeSlide = ref<number>(1)
+const activeSlide = ref<number>(1);
 
 function nextSlide() {
-  activeSlide.value++
+  activeSlide.value++;
   if (activeSlide.value === 4) {
-    emits('closeBoard')
+    emits('closeBoard');
   }
 }
 function prevSlide() {
   if (activeSlide.value === 2 || activeSlide.value === 3) {
-    activeSlide.value--
+    activeSlide.value--;
   }
 }
 function skipSlides() {
-  emits('closeBoard')
+  emits('closeBoard');
 }
 
-const onboarding = localStorage.getItem('onboarding')
+const onboarding = localStorage.getItem('onboarding');
 
 if (onboarding === null) {
   // localStorage.setItem('onboarding', 'true');
@@ -35,51 +35,52 @@ if (onboarding === null) {
   // activeSlide.value = 4;
 }
 
-let startX: number | undefined
+
+let startX: number | undefined;
 
 addEventListener('touchstart', (e) => {
-  startX = e.changedTouches[0]?.clientX
-})
+  startX = e.changedTouches[0]?.clientX;
+});
 
 addEventListener('touchend', (e) => {
   if (startX) {
-    const endX = e.changedTouches[0]?.clientX
+    const endX = e.changedTouches[0]?.clientX;
     if (endX) {
-      const swipeDistance = endX - startX
+      const swipeDistance = endX - startX;
 
       if (swipeDistance > 50) {
-        swipeRight()
+        swipeRight();
       } else if (swipeDistance < -50) {
-        swipeLeft()
+        swipeLeft();
       }
     }
   }
-})
+});
 
 function swipeLeft() {
-  nextSlide()
+  nextSlide();
 }
 
 function swipeRight() {
-  prevSlide()
+  prevSlide();
 }
 
+
 const isBigWidth = computed(() => {
-  return window.innerWidth > 450
-})
+  return window.innerWidth > 450;
+});
 
 const isSmallHeight = computed(() => {
-  return window.innerHeight < 600
-})
+  return window.innerHeight < 650;
+});
 
 onMounted(() => {
-  document.body.classList.add('dark-scheme')
-  document.body.classList.add('overflow')
-})
+  document.body.classList.add('overflow');
+});
 
 onBeforeUnmount(() => {
-  document.body.classList.remove('overflow')
-})
+  document.body.classList.remove('overflow');
+});
 </script>
 
 <template>
@@ -92,7 +93,7 @@ onBeforeUnmount(() => {
       <div v-if="activeSlide < 3" class="line-inactive line" />
     </div>
     <div :class="{ showScreen: activeSlide === 1 }" class="boarding-screen boarding-screen_first">
-      <img class="img1" :src="onB1" alt="" srcset="" />
+      <img class="img1" :class="{ small: isSmallHeight }" :src="onB1" alt="" srcset="" />
       <div>
         <div class="head head_1">Premium kicks, smarter price</div>
         <div class="description">
@@ -109,8 +110,7 @@ onBeforeUnmount(() => {
         :class="[{ big: isBigWidth }, { small: isSmallHeight }]"
         :src="onB2"
         alt=""
-        srcset=""
-      />
+        srcset="" />
       <div>
         <div class="head">Fair play</div>
         <div class="description second">
@@ -127,29 +127,25 @@ onBeforeUnmount(() => {
           :class="[{ big: isBigWidth }, { small: isSmallHeight }]"
           :src="onB31"
           alt=""
-          srcset=""
-        />
+          srcset="" />
         <img
           class="img4"
           :class="[{ big: isBigWidth }, { small: isSmallHeight }]"
           :src="onB32"
           alt=""
-          srcset=""
-        />
+          srcset="" />
         <img
           class="stars"
           :class="[{ big: isBigWidth }, { small: isSmallHeight }]"
           :src="stars"
           alt=""
-          srcset=""
-        />
+          srcset="" />
         <img
           class="confetti"
           :class="[{ big: isBigWidth }, { small: isSmallHeight }]"
           :src="confetti"
           alt=""
-          srcset=""
-        />
+          srcset="" />
       </div>
       <div>
         <div class="head">Clear win</div>
@@ -235,6 +231,14 @@ img {
 
 .confetti {
   position: absolute;
+  top: 8.62dvh;
+  left: 38.06dvw;
+  z-index: 2;
+  width: 35.23dvw;
+}
+
+.confetti.small {
+  position: absolute;
   top: 4.62dvh;
   left: 38.06dvw;
   z-index: 2;
@@ -251,6 +255,15 @@ img {
 
 .stars {
   position: absolute;
+  bottom: -3.07dvh;
+  left: -7.87dvw;
+  z-index: 2;
+  width: 23.13dvw;
+  transform: rotate(6.89 deg);
+}
+
+.stars.small {
+  position: absolute;
   bottom: 5.07dvh;
   left: -7.87dvw;
   z-index: 2;
@@ -266,10 +279,17 @@ img {
   bottom: 12.02dvh;
 }
 
+.img3.small,
+.img4.small {
+  position: absolute;
+  width: 43.04dvw;
+  border-radius: 12px;
+}
+
 .img3,
 .img4 {
   position: absolute;
-  width: 43.04dvw;
+  width: 52.04dvw;
   border-radius: 12px;
 }
 
@@ -279,7 +299,21 @@ img {
   z-index: 1;
 }
 
+.img4.small {
+  top: 3vh;
+  left: 0;
+  z-index: 1;
+}
+
 .img3 {
+  right: 0;
+  bottom: -14vh;
+  right: -3vw;
+  z-index: 3;
+  box-shadow: 0 0 16px 0 #8f8f8f;
+}
+
+.img3.small {
   right: 0;
   bottom: -3vh;
   z-index: 3;
@@ -349,13 +383,24 @@ img {
 }
 
 .img1 {
-  width: 90%;
   margin-bottom: auto;
 }
 
+.img1.small {
+  width: 90%;
+}
+
+.img1 {
+  width: 130%;
+}
+
 .img2 {
-  width: 85%;
+  width: 120%;
   margin-bottom: auto;
+}
+
+.img2.small {
+  width: 85%;
 }
 
 .head_1 {
