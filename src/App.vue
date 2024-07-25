@@ -92,7 +92,9 @@ onBeforeUnmount(() => {
       <div v-if="activeSlide < 2" class="line-inactive line" />
       <div v-if="activeSlide < 3" class="line-inactive line" />
     </div>
-    <div :class="{ showScreen: activeSlide === 1 }" class="boarding-screen boarding-screen_first">
+    <div
+      :class="[{ showScreen: activeSlide === 1 }, { hidden: activeSlide !== 1 }]"
+      class="boarding-screen boarding-screen_first">
       <img class="img1" :class="{ small: isSmallHeight }" :src="onB1" alt="" srcset="" />
       <div>
         <div class="head head_1">Premium kicks, smarter price</div>
@@ -104,7 +106,9 @@ onBeforeUnmount(() => {
         <div class="skip-text" @click="skipSlides">Skip</div>
       </div>
     </div>
-    <div :class="{ showScreen: activeSlide === 2 }" class="boarding-screen boarding-screen_second">
+    <div
+      :class="[{ showScreen: activeSlide === 2 }, { hidden: activeSlide !== 2 }]"
+      class="boarding-screen boarding-screen_second">
       <img
         class="img2"
         :class="[{ big: isBigWidth }, { small: isSmallHeight }]"
@@ -120,7 +124,9 @@ onBeforeUnmount(() => {
         <VButton color="wight" class="btn-2" @click="nextSlide"> Next </VButton>
       </div>
     </div>
-    <div :class="{ showScreen: activeSlide === 3 }" class="boarding-screen boarding-screen_third">
+    <div
+      :class="[{ showScreen: activeSlide === 3 }, { hidden: activeSlide !== 3 }]"
+      class="boarding-screen boarding-screen_third">
       <div class="img-container">
         <img
           class="img3"
@@ -177,6 +183,7 @@ onBeforeUnmount(() => {
 }
 
 .boarding-screen {
+  visibility: visible;
   position: absolute;
   top: 0;
   left: 0;
@@ -223,6 +230,7 @@ img {
   height: 78.74vw;
   padding-top: 10dvh;
   margin-bottom: auto;
+  margin-top: auto;
 }
 
 .img-container.big {
@@ -336,6 +344,10 @@ img {
   top: 0;
 }
 
+.boarding-screen.hidden {
+  visibility: hidden;
+}
+
 .boarding-screen_first {
   padding-top: 10vw;
   background-image: url('./assets/onB-bg1.png');
@@ -383,6 +395,7 @@ img {
 }
 
 .img1 {
+  margin-top: auto;
   margin-bottom: auto;
 }
 
@@ -391,11 +404,12 @@ img {
 }
 
 .img1 {
-  width: 130%;
+  width: 120%;
 }
 
 .img2 {
-  width: 120%;
+  width: 110%;
+  margin-top: auto;
   margin-bottom: auto;
 }
 
