@@ -395,7 +395,7 @@ img {
 }
 
 .img1.small {
-  width: 90%;
+  width: 85%;
 }
 
 .img1 {
@@ -409,7 +409,7 @@ img {
 }
 
 .img2.small {
-  width: 85%;
+  width: 80%;
 }
 
 .head_1 {
