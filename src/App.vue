@@ -13,6 +13,9 @@ const emits = defineEmits(['closeBoard']);
 const activeSlide = ref<number>(1);
 
 function nextSlide() {
+  if (activeSlide.value === 3) {
+    return;
+  }
   activeSlide.value++;
   if (activeSlide.value === 4) {
     emits('closeBoard');
@@ -239,7 +242,7 @@ img {
 
 .confetti {
   position: absolute;
-  top: 8.62dvh;
+  top: -2.62dvh;
   left: 38.06dvw;
   z-index: 2;
   width: 35.23dvw;
@@ -253,17 +256,9 @@ img {
   width: 31.23dvw;
 }
 
-.confetti.big {
-  top: -2.62dvh;
-}
-
-.confetti.small {
-  top: -2.62dvh;
-}
-
 .stars {
   position: absolute;
-  bottom: -3.07dvh;
+  bottom: 6.07dvh;
   left: -7.87dvw;
   z-index: 2;
   width: 23.13dvw;
@@ -302,7 +297,7 @@ img {
 }
 
 .img4 {
-  top: 3vh;
+  top: -8vh;
   left: 0;
   z-index: 1;
 }
@@ -315,7 +310,7 @@ img {
 
 .img3 {
   right: 0;
-  bottom: -14vh;
+  bottom: -2vh;
   right: -3vw;
   z-index: 3;
   box-shadow: 0 0 16px 0 #8f8f8f;
@@ -421,3 +416,4 @@ img {
   margin-top: -7vw;
 }
 </style>
+
